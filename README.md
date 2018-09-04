@@ -7,7 +7,7 @@
 * Définir précisément les variables d'instance et de classe
 * Proposer deux manière de définir des méthodes de classe
 
-Les bases: Qu'est-ce que la POO?
+## Les bases: Qu'est-ce que la POO?
 Ruby est un langage orienté objet. Cela veut dire que cela a été conçu sur l'idée que le développeur construira son application en passant essentiellement par des objets.
 
 De la même manière que vous l'avez appris avec le JSOO (Javascript orienté objet), un objet est une collection d'attributs reliés (propriétés) et de méthodes (comportements). Imaginez un objet comme une petite machine avec des écrans affichant un texte et des boutons à pousser.
