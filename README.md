@@ -1,11 +1,12 @@
 # Intro à la Programmation Orientée Objet dans Ruby
 
 ## Objectifs pédagogiques
-* Explain the relationship between .new() and def initialize()
-* Distinguish whether a piece of data is best-suited to being stored in a local, instance, or class variable
-* Explain whether given data is best-suited to having its accessibility defined by attr_accessor, attr_reader, attr_writer, or none of the above
-* Properly define instance and class variables
-* List two ways of defining class methods
+* Expliquer la relation entre .new() et def initialize()
+* Savoir si une donnée serait mieux stockée dans une variable locale, d'instance ou de classe
+* Expliquer si l'accessibilité de cette donnée est définie au mieux par attr_accessor, attr_reader, attr_writer ou aucune de ces expressions
+* Définir précisément les variables d'instance et de classe
+* Proposer deux manière de définir des méthodes de classe
+
 Framing: What is OOP?
 Ruby is an object-oriented language. That means it's based on the idea that you'll build your application with objects in mind.
 
