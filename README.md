@@ -19,8 +19,8 @@ Une grande partie du code que vous allez voir aujourd'hui est très similaire à
 ## A FAIRE: Le Processus POO (10 minutes / 0:10)
 We've talked quite a bit about object oriented programming as a paradigm, but we haven't talked much about how to break a problem down into object components.
 
-Example: Monopoly
-"Monopoly is a game where players try to accumulate wealth through property ownership and money"
+### Example: Monopoly
+""Monopoly is a game where players try to accumulate wealth through property ownership and money""
 
 Game Board
 Players
