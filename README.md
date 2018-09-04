@@ -1,9 +1,9 @@
 # Intro à la Programmation Orientée Objet dans Ruby
 
 ## Objectifs pédagogiques
-* Expliquer la relation entre .new() et def initialize()
+* Expliquer la relation entre `.new()` et `def initialize()`
 * Savoir si une donnée serait mieux stockée dans une variable locale, d'instance ou de classe
-* Expliquer si l'accessibilité de cette donnée est définie au mieux par attr_accessor, attr_reader, attr_writer ou aucune de ces expressions
+* Expliquer si l'accessibilité de cette donnée est définie au mieux par `attr_accessor`, `attr_reader`, `attr_writer ou aucune de ces expressions
 * Définir précisément les variables d'instance et de classe
 * Proposer deux manière de définir des méthodes de classe
 
