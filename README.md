@@ -37,25 +37,26 @@ Breaking your ideas down gives you a starting place for what those objects may b
 
 Spend 10 minutes working with a partner to come up with at least three types of objects that you might define when creating the following examples. Add your responses as a comment on this issue. We'll go over your answers as a class.
 
-Amazon
-A Homework Grading App
-An Attendance Taking App
-Lyft
-A helpful approach might be to take the "nouns" involved in the application and say they are objects.
+1. Amazon
+2. A Homework Grading App
+3. An Attendance Taking App
+3. Lyft
+> A helpful approach might be to take the "nouns" involved in the application and say they are objects.
 
-Our First Object (10 minutes / 0:20)
+## Our First Object (10 minutes / 0:20)
 Say that we have a car. Each of us has a mental model of what a car is: it has four wheels, runs on gas, has a steering wheel that allows us to drive it, etc. This blueprint is like a class. Now, when we see a car in front of us, this is like an instance, it's an actual object in front of us. Each object has its blueprint, and is an instance of that blueprint or class.
 
 A class is a blueprint from which objects are made. In Javascript we used classes, which operate very similarly to classes in Ruby. Each object made from a class is an instance of that class. Each instance of a class is an object.
 
 Let's define a User class. We'll be using binding.pry to test our code.
 
-Aside: pry is a ruby gem that allows us to work with ruby code in an IRB (interactive ruby shell). It's similar to working in our developer console in a web browser with javascript.
-
+> Aside: pry is a ruby gem that allows us to work with ruby code in an IRB (interactive ruby shell). It's similar to working in our developer console in a web browser with javascript.
+```
 $ touch app.rb
 $ gem install pry # run this if you haven't installed pry yet
 require "pry"
-
+```
+```
 class User
 
   def set_name_to(some_string)
@@ -75,6 +76,7 @@ end
 binding.pry
 
 puts "end of file"
+```
 What about this Ruby class looks similar to a Javascript class?
 Now let's generate some instances of this class...
 
