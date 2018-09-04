@@ -16,7 +16,7 @@ Lorsqu'on écrit une application orientée objet, on écrit les plans de ces mac
 
 Une grande partie du code que vous allez voir aujourd'hui est très similaire à ce que vous avez vu la dans le cours de JSOO la semaine dernière. Le concept de classe existe depuis quelques années déjà, mais n'a été introduit dans Javascript que très récemment (ECMAScript 2016/ES6). Utilisez ces connaissances pour avancer dans le cours d'aujourd'hui!
 
-## A FAIRE: The Processus POO (10 minutes / 0:10)
+## A FAIRE: Le Processus POO (10 minutes / 0:10)
 We've talked quite a bit about object oriented programming as a paradigm, but we haven't talked much about how to break a problem down into object components.
 
 Example: Monopoly
