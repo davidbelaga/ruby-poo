@@ -20,19 +20,19 @@ Une grande partie du code que vous allez voir aujourd'hui est très similaire à
 We've talked quite a bit about object oriented programming as a paradigm, but we haven't talked much about how to break a problem down into object components.
 
 ### Example: Monopoly
-""Monopoly is a game where players try to accumulate wealth through property ownership and money""
+> "Monopoly is a game where players try to accumulate wealth through property ownership and money"
 
-Game Board
-Players
-Game Tokens
-Property Cards
-Money
-Example: Facebook
-"Facebook is an application where users can post statuses and add friends."
+* Game Board
+* Players
+* Game Tokens
+* Property Cards
+* Money
+### Example: Facebook
+> "Facebook is an application where users can post statuses and add friends."
 
-Users
-Statuses
-Friends
+* Users
+* Statuses
+* Friends
 Breaking your ideas down gives you a starting place for what those objects may be.
 
 Spend 10 minutes working with a partner to come up with at least three types of objects that you might define when creating the following examples. Add your responses as a comment on this issue. We'll go over your answers as a class.
