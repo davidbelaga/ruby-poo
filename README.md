@@ -7,16 +7,16 @@
 * Définir précisément les variables d'instance et de classe
 * Proposer deux manière de définir des méthodes de classe
 
-Framing: What is OOP?
-Ruby is an object-oriented language. That means it's based on the idea that you'll build your application with objects in mind.
+Les bases: Qu'est-ce que la POO?
+Ruby est un langage orienté objet. Cela veut dire que cela a été conçu sur l'idée que le développeur construira son application en passant essentiellement par des objets.
 
-As you learned with OOJS, an object is a collection of related attributes (properties) and methods (behavior). You can think of an object as a little machine: it has displays you can read and buttons you can push.
+De la même manière que vous l'avez appris avec le JSOO (Javascript orienté objet), un objet est une collection d'attributs reliés (propriétés) et de méthodes (comportements). Imaginez un objet comme une petite machine avec des écrans affichant un texte et des boutons à pousser.
 
-When you write an object-oriented application, the idea is that you write the blueprints for these machines, and then you write a sequence of events your users can initiate in which these machines interact with each other.
+Lorsqu'on écrit une application orientée objet, on écrit les plans de ces machines, et ensuite on écrit une suite d'événements, qui sera lancée par les utilisateurs, et qui permettra aux machines d'interagir les unes avec les autres.
 
-Much of the code you see today will be very similar to what you encountered in last week's OOJS class. That's because classes are a concept that have been around for quite some time but only just introduced in Javascript (ECMAScript 2016/ES6). Use this pre-existing knowledge to your advantage in today's class!
+Une grande partie du code que vous allez voir aujourd'hui est très similaire à ce que vous avez vu la dans le cours de JSOO la semaine dernière. Le concept de classe existe depuis quelques années déjà, mais n'a été introduit dans Javascript que très récemment (ECMAScript 2016/ES6). Utilisez ces connaissances pour avancer dans le cours d'aujourd'hui!
 
-You Do: The OOP Process (10 minutes / 0:10)
+A FAIRE: The Processus POO (10 minutes / 0:10)
 We've talked quite a bit about object oriented programming as a paradigm, but we haven't talked much about how to break a problem down into object components.
 
 Example: Monopoly
