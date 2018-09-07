@@ -17,31 +17,32 @@ Lorsqu'on écrit une application orientée objet, on écrit les plans de ces mac
 Une grande partie du code que vous allez voir aujourd'hui est très similaire à ce que vous avez vu la dans le cours de JSOO la semaine dernière. Le concept de classe existe depuis quelques années déjà, mais n'a été introduit dans Javascript que très récemment (ECMAScript 2016/ES6). Utilisez ces connaissances pour avancer dans le cours d'aujourd'hui!
 
 ## A FAIRE: Le Processus POO (10 minutes / 0:10)
-We've talked quite a bit about object oriented programming as a paradigm, but we haven't talked much about how to break a problem down into object components.
+Nous avons expliqué sommairement en quoi la poo est un paradigme, mais nous n'avons pas expliqué comment réduire un problème en un ensemble d'objets.
 
-### Example: Monopoly
-> "Monopoly is a game where players try to accumulate wealth through property ownership and money"
+### Exemple: Le Monopoly
+> "Le Monopoly est un jeu où les joueurs de faire fortune à travers le biens immobiliers et l'argent.
+* plateau
+* joueurs
+* jetons
+* cartes de propriété
+* l'argent
+### Exemple: Facebook
+> "Facebook est une application où des utilisateurs peuvent poster des statuts et ajouter des amis.
 
-* Game Board
-* Players
-* Game Tokens
-* Property Cards
-* Money
-### Example: Facebook
-> "Facebook is an application where users can post statuses and add friends."
+* utilisateurs
+* statuts
+* amis
 
-* Users
-* Statuses
-* Friends
-Breaking your ideas down gives you a starting place for what those objects may be.
+Décomposer ses idées te donnera une idée de ce que peuvent être les objets.
 
-Spend 10 minutes working with a partner to come up with at least three types of objects that you might define when creating the following examples. Add your responses as a comment on this issue. We'll go over your answers as a class.
+Prends 10 minutes avec un partenaire pour trouver au moins trois types d'objets qui pourraient t'aider à créer les exemples d'applications qui suivent. Ajoute tes réponses en commentaire à la fin de ce cours. Nous répondrons aux réponses comme dans un cours.
+
 
 1. Amazon
-2. A Homework Grading App
-3. An Attendance Taking App
+2. Une application qui attribue des notes aux devoirs maisons
+3. Une application qui note les présences.
 3. Lyft
-> A helpful approach might be to take the "nouns" involved in the application and say they are objects.
+> Une approche utile serait de prendre les "noms" dans la description de l'application et de dire qu'ils sont des noms.
 
 ## Our First Object (10 minutes / 0:20)
 Say that we have a car. Each of us has a mental model of what a car is: it has four wheels, runs on gas, has a steering wheel that allows us to drive it, etc. This blueprint is like a class. Now, when we see a car in front of us, this is like an instance, it's an actual object in front of us. Each object has its blueprint, and is an instance of that blueprint or class.
