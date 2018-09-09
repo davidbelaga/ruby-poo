@@ -646,7 +646,7 @@ Clonez cet exercice et suivez les instructions dans le readme.
 [Scrabble Word Scorer](https://github.com/ga-wdi-exercises/scrabbler)
 
 ### Resources
-* Variables cheat sheet
+* [Fiche variables](https://github.com/ga-wdi-lessons/ruby-oop/blob/master/variables.md)
 * Other exercises
   * [Monkeys](https://github.com/ga-wdi-exercises/oop_monkey)
   * [Application Config](https://github.com/ga-wdi-exercises/ruby_application_configuration)
