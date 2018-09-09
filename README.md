@@ -106,22 +106,27 @@ Le `User` est-il une...
 
 * classe?
 * instance?
+
 `alice` est-elle une...
 
 * classe?
 * instance?
+
 `User.greet` retourne une erreur. `alice.greet` marche correctement. Donc nous pouvons déduire que la méthode `greet` ne peut être appelée que sur...
 
 * des instances de la classe User?
 * la classe User elle-même?
+
 Ainsi, est-ce que ça aurait un sens de nommer `greet` une..
 
 * "une méthode d'instance"?
 * "une méthode de classe"?
+
 `User.new` marche bien. `alice.new` renvoit une erreur. Donc nous pouvons déduire que la nouvelle méthode ne peut qu'être appelée sur...
 
 * des instances de la classe User?
 * la classe User elle-même?
+
 Ainsi, est-ce que ça aurait un sens de nommer `new` une..
 
 * "une méthode d'instance"?
