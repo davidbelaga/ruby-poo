@@ -44,7 +44,7 @@ Prends 10 minutes avec un partenaire pour trouver au moins trois types d'objets 
 3. Lyft
 > Une approche utile serait de prendre les "noms" dans la description de l'application et de dire qu'ils sont des noms.
 
-## Our First Object (10 minutes / 0:20)
+## Notre premier Object (10 minutes / 0:20)
 Prenons une voiture? On a tous un modèle mental d'une voiture: elle a quatre roues, de l'essence, un guidon... Le plan de la voiture est comme une classe. Lorsque nous voyons une voiture, c'est comme une instance de classe, un véritable objet devant nous. Chaque objet a son propre plan, et est une instance de ce plan ou classe.
 
 Une classe est un plan à partir duquel les objets sont fabriqués. En Javascript nous avons utilisé des classes qui fonctionnent de façon très similaire que dans Ruby. Chaque objet fait à partir d'une classe est une instance de cette classe. Chaque instance de classe est un objet.
@@ -81,7 +81,7 @@ puts "fin du fichier"
 ```
 
 <details>
-  <summary>Qu'en est-il de cette classe Ruby qui ressemble à une classe Javascript.
+  <summary><strong>Qu'en est-il de cette classe Ruby qui ressemble à une classe Javascript.</strong>
   </summary>
 Le mot clef `classe`. La classe contient des méthodes.
 </details>
@@ -190,11 +190,18 @@ madhatter.greet
 puts alice
 puts madhatter
 ```
+<details><summary>
+Quelles conclusions pouvons-nous tirer de la relation entre `def initialize` et `.new`? (Indice: elle sert le même but que la fonction constructor de Javascript's constructor)</summary>
+ >> initialize est une méthode spéciale qui est en lien avec .new, mais à part ça elle a le même comportement que n'importe quelle autre méthode. Cela signifie qu'on peut lui passer des arguments (à nouveau, tout comme le constructor de Javascript's )...
+  </details>
+  
+<details><summary>How is this different from other User instance methods we've seen?</summary>
+  >> initialize peut seulement être appelé avec la classe `.new` class (i.e. elle est lancée seulement lorsque  a été créé).
+  </details>
 
-What can we conclude about the relationship of `def initialize` and `.new`? (Hint: it serves the same purpose as Javascript's constructor function)
-How is this different from other User instance methods we've seen?
+
 You Can Pass Arguments to initialize
-initialize is a special method in its relationship to .new, but otherwise it behaves like any other method. This means you can pass arguments to it (again, just like Javascript's constructor)...
+
 
 require "pry"
 
