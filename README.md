@@ -79,10 +79,11 @@ binding.pry
 
 puts "fin du fichier"
 ```
-<details><summary>Qu'en est-il de cette classe Ruby qui ressemble à une classe Javascript.</summary>
+<details><summary> ### Qu'en est-il de cette classe Ruby qui ressemble à une classe Javascript.</summary>
   <p>Le mot clef `classe`. La classe contient des méthodes.</p>
-Maintenant, générons des instances de cette classe...
+</details>
 
+Maintenant, générons des instances de cette classe...
 
 alice = User.new
 alice.set_name_to("alice")
