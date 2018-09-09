@@ -229,9 +229,9 @@ Créons une méthode qui imprime le nom complet du User.
 
 Dans Ruby, les variables normales sont accessibles seulement à l'intérieur de la méthode où elles ont été créées.
 
-Si vous mettez un @ avant le nom de la variable////////
-If you put an @ before the variable's name, it becomes an instance variable and therefore available inside the entire instance in which it was created.
+Si vous mettez un @ avant le nom de la variable, elle devient une variable d'instance et elle sera alors accessible à l'intérieur l'intégralité de l'instance  dans laquelle elle a été créée.
 
+```ruby
 class User
 
   def initialize(firstname, lastname)
@@ -244,18 +244,23 @@ class User
   end
 
 end
+```
+```ruby
 # pry
 harry = User.new("Harry", "Potter")
 # => #<User:0x007faf3903f670 @firstname="Harry", @lastname="Potter">
 harry.full_name
 # => "Harry Potter"
-Getting and Setting Properties
-To get Harry's first name, we can't simply type harry.firstname. To set Harry's first name, we can't simply type harry.firstname = "Harry"
+```
 
-The only things available outside an instance are its methods. @firstname is a property, not a method. We can't access data inside of an instance unless it contains methods that let us do so.
+### Récupérer et définir les propriétés
+Afin de récupérer le prénom de Harry on ne peut pas simplement faire harry.firstname. Afin de définir le prénom de Harry on ne peut pas simplement taper harry.firstname = "Harry"
 
-To make a property "gettable" and "settable", we need to create "getter" and "setter" methods for it.
+Les seules choses disponibles en dehors d'une instance sont ses méthodes. @firstname est une propriété et non une méthode. On ne peut pas accéder des données à l'intérieur d'une instance à moins qu'elle contienne des méthodes qui nous le permettent.
 
+Afin de rendre une méthode "récupérable" ("gettable" en anglais) and "définissable" ("settable" en anglais), nous devons créer des méthodes "getter" et "setter".
+
+```ruby
 class User
 
   def initialize(firstname, lastname)
@@ -276,6 +281,8 @@ class User
   end
 
 end
+```
+```ruby
 # pry
 harry = User.new("Harry", "Potter")
 # => #<User:0x007faf3903f670 @firstname="Harry", @lastname="Potter">
@@ -284,9 +291,11 @@ puts harry.get_firstname
 harry.set_firstname("Ginny")
 puts harry.get_firstname
 # "Ginny"
-attr_accessor
-Recall how we couldn't simply type Harry.firstname = "some other name" the previous example.
+```
+### attr_accessor
+Souvenez-vous comment on ne pouvait pas simplement tapper Harry.firstname = "un autre prénom" dans l'exemple précédent.
 
+```ruby
 class User
 
   def initialize(firstname, lastname)
@@ -307,14 +316,18 @@ class User
   end
 
 end
+```
+```ruby
 harry = User.new("Harry", "Potter")
 harry.firstname = "Ginny"
 # This throws an error
 harry.set_firstname("Ginny")
 puts harry.get_firstname
 # =>
-If only there were a way to define a class so that we don't have to define a getter and setter method for every single property...
+```
+Si seulement il y avait une façon de définir une classe afin de ne pas à avoir à définir une méthode getter et setter pour chaque propriété...
 
+```ruby
 class User
 
   attr_accessor :firstname, :lastname
@@ -329,16 +342,25 @@ class User
   end
 
 end
+```
+```ruby
 nayana = User.new("Nayana", "Davis")
 nayana.firstname = "Nayana"
 puts nayana.firstname
-We now can directly access properties on the User instance, so we can deduce that `attr_accessor` is a shortcut that does what?
-attr_accessor is actually a shortcut that combines two other shortcuts
-attr_accessor is attr_reader combined with attr_writer.
-attr_reader makes an attribute readable, attr_writer makes an attribute writeable. attr_accessor makes an attribute both readable AND writeable.
+```
+<details><summary>
+Maintenant nous pouvons directement accéder les propriétés de l'instance User, donc nous pouvons déduire que `attr_accessor` est un raccourci qui fait quoi?</summary>
+  >> Cela créé des méthodes getter et setter pour la variable d'instance firstname.
+  </details>
+  
+### `attr_accessor` est en fait un raccourci qui combine deux autres raccourcis
+#### `attr_accessor` est `attr_reader` combiné avec attr_writer.
 
-To illustrate the difference between attr_reader and attr_writer, let's have a look at the code below.
+attr_reader rend un attribut lisible, attr_writer rend an attribut écrivable. attr_accessor rend un attribute à la fois lisible ET écrivable.
 
+Afin d'illustrer la différence entre attr_reader et attr_writer, jetons un oeil au code en-dessous.
+
+```ruby
 class User
   attr_reader :firstname
   attr_writer :lastname
@@ -353,6 +375,8 @@ class User
   end
 
 end
+```
+```ruby
 hermione = User.new("Hermione", "Granger")
 hermione.firstname
 # => "Hermione"
@@ -363,6 +387,8 @@ hermione.firstname = "Ginny"
 hermione.lastname = "Weasley"
 hermione.full_name
 # => "Hermione Weasley"
+```
+/////////////////////////////////////
 attr_reader creates a getter method only. Trying to do hermione.firstname = "Ginny" will fail.
 
 attr_writer creates a setter method only. Trying to do puts hermione.lastname will fail.
