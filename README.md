@@ -145,19 +145,24 @@ Ainsi, est-ce que ça aurait un sens de nommer `new` une..
 </details>
 
 ### Initialiser Users (10 minutes / 0:30)
-What was the purpose of a constructor function in Javascript classes?
-Ruby classes have an equivalent to Javascript constructors: the initialize method!
+<details>
+  <summary><strong>Quel est le but d'un constructeur de fonctions dans les classes Javascript?</strong></summary>
+  > Initialiser n'importe quelle propriété que nous souhaitons donner à une instance de classe lorsqu'elle est créée.
+</details>
 
+Les classes Ruby ont un équivalent aux constructeurs Javascript: la méthode initialize!
+
+```ruby
 require 'pry'
 
 class User
 
   def initialize
-    puts "I'm a new User"
+    puts "je suis un nouveau User"
   end
 
   def set_name_to(some_string)
-    @name = some_string
+    @name = un_string
   end
 
   def get_name
@@ -165,7 +170,7 @@ class User
   end
 
   def greet
-    puts "Hi! My name is #{@name}!"
+    puts "Salut! Je m'appelle #{@name}!"
   end
 
 end
@@ -173,6 +178,8 @@ end
 binding.pry
 
 puts "end of file"
+```
+```ruby
 alice = User.new
 alice.greet
 
@@ -182,6 +189,8 @@ madhatter.greet
 
 puts alice
 puts madhatter
+```
+
 What can we conclude about the relationship of `def initialize` and `.new`? (Hint: it serves the same purpose as Javascript's constructor function)
 How is this different from other User instance methods we've seen?
 You Can Pass Arguments to initialize
