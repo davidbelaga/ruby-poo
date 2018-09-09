@@ -641,19 +641,19 @@ Prenons l'exemple d'un compte bancaire... Je pourrais définir un compte bancair
 Si nos objets sont bien définis, alors ils interagissent de façon bien définie. Ceci nous permet de refactorer (réécrire) n'importe quel objet sans impacter d'autres endroits de notre code.
 
 ### Entrainement supplémentaire: Scrabble
-Clonez cet exercie et suivez les instructions dans le readme.
+Clonez cet exercice et suivez les instructions dans le readme.
 
 [Scrabble Word Scorer](https://github.com/ga-wdi-exercises/scrabbler)
 
 ### Resources
 * Variables cheat sheet
 * Other exercises
-  * Monkeys
-  * Application Config
-  * Superheroes
+  * [Monkeys](https://github.com/ga-wdi-exercises/oop_monkey)
+  * [Application Config](https://github.com/ga-wdi-exercises/ruby_application_configuration)
+  * [Superheroes](https://github.com/ga-wdi-exercises/superheros)
 * Publications sur internet
   * WDI8, Robin
-    * Part 1
-    * Part 2
-    * Part 3
-    * Part 4
+    * [Part 1](https://www.youtube.com/watch?v=-pAFSheGDr0)
+    * [Part 2](https://www.youtube.com/watch?v=ZgZCtns27pE)
+    * [Part 3](https://www.youtube.com/watch?v=npM249VzB0I&feature=youtu.be)
+    * [Part 4](https://www.youtube.com/watch?v=su_XYcj_Cpk&feature=youtu.be)
