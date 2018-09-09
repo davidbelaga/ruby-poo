@@ -356,7 +356,7 @@ Maintenant nous pouvons directement accéder les propriétés de l'instance User
 ### `attr_accessor` est en fait un raccourci qui combine deux autres raccourcis
 #### `attr_accessor` est `attr_reader` combiné avec `attr_writer`.
 
-attr_reader rend un attribut lisible, attr_writer rend an attribut écrivable. attr_accessor rend un attribute à la fois lisible ET écrivable.
+`attr_reader` rend un `attribut lisible`, `attr_writer rend an attribut écrivable. attr_accessor rend un attribute à la fois lisible ET écrivable.
 
 Afin d'illustrer la différence entre attr_reader et attr_writer, jetons un oeil au code en-dessous.
 
@@ -619,31 +619,31 @@ harry.encrypt("Expecto Patronum")
 # Error! Private method `encrypt`
 ```
 
-Putting private in front of methods means they can be used inside the object, but are not available outside it. An analogy: they're functions that do not have their own buttons on the outside of the machine, like a car's air filter.
+Si l'on met `private`devant des méthodes signifie qu'ils peuvent être utilisés à l'intérieur de l'objet, mais qu'ils sont inaccessibles depuis l'extérieur. Une analogie: ce sont des fonctions qui n'ont pas leur boutons à l'extérieur de la machine, comme le filtre à air de la voiture.
 
-private is useful mostly for keeping things organized. Consider jQuery: It's already cluttered enough, with all these methods like .fadeOut and .css. It has lots of other methods hidden inside it that we don't really need to know about.
+`private`est utile surtout pour garder les choses bien organisées. Prenons jQuery: ce langage est déjà bien assez compliqué avec des méthodes comme `.fadeOut`et `.css`. Il y a plein d'autres méthodes cachées à l'intérieur qu'on n'est pas obligé de connaître.
 
-### Review: Why OOP?
-#### Easy to Understand
+### Résumé: Pourquoi la POO?
+#### C'est facile à comprendre
 Objects help us build programs that model how we tend to think about the world. Instead of a bunch of variables and functions (procedural style), we can group relevant data and functions into objects, and think about them as individual, self-contained units. This grouping of properties (data) and methods is called encapsulation.
 
 #### Managing Complexity
-This is especially important as our programs get more and more complex. We can't keep all the code (and what it does) in our head at once. Instead, we often want to think just a portion of the code.
+Ceci est d'autant plus important que nos programmes deviennent de plus en plus complexes. On en peut retenir l'intégralite du code (et de ce qu'il fait) simultanémant dans notre tête. Nous préférons nous concentrer sur des portions du code.
 
-Objects help us organize and think about our programs. If I'm looking at code for a Squad object, and I see it has associated people, and those people can dance when the squad dances, I don't need to think about or see all the code related to a person dancing. I can just think at a high level "ok, when a squad dances, all it's associated people dance". This is a form of abstraction... I don't need to think about the details, just what's happening at a high-level.
+Les objets nous aident à organiser et penser nos programmes. Si je regarde le code pour un objet équipe, et si je vois que cet objet a des personnes qui y sont associées, et que ces personnes peuvent danser lorsque l'équipe danse, je ne dois pas penser ou voir le code associé à toutes ces personnes qui dansent. Je peux me contenter de placer à un niveau au-dessus : lorsque l'équipe danse, les personnes associées dansent. C'est une forme d'abstraction qui me permet de ne pas me concentrer sur les détails.
 
-#### Ensuring Consistency
-One side effect of encapsulation (grouping data and methods into objects) is that these objects can be in control of their data. This usually means ensuring consistency of their data.
+#### Garantir une cohérence
+Un des effets de l'encapsulation (regrouper les données et méthodes dans des objets) est que ces objets peuvent être en contrôle de leurs données. Ceci signifie une cohérence dans les données.
 
-Consider the bank account example... I might define a bank account object such that you can't directly change it's balance. Instead, you have to use the withdrawl and deposit methods. Those methods are the interface to the account, and they can enforce rules for consistency, such as "balance can't be less than zero".
+Prenons l'exemple d'un compte bancaire... Je pourrais définir un compte bancaire afin qu'on ne puiss pas directement modifier le solde. Au lieu, il faut utiliser les méthodes retrait ou dépot. Ces méthodes sont les interfaces du compte, et ils peuvent renforcer les règles de cohérence, telles que "le solde ne peut être inférieur à zéro."
 
-#### Modularity
-If our objects are well-designed, then they interact with each other in well-defined ways. This allows us to refactor (rewrite) any object, and it should not impact (cause bugs) in other areas of our programs.
+#### Modularité
+Si nos objets sont bien définis, alors ils interagissent de façon bien définie. Ceci nous permet de refactorer (réécrire) n'importe quel objet sans impacter d'autres endroits de notre code.
 
-### Extra Practice: Scrabble
-Clone this exercise and follow the instructions in the readme.
+### Entrainement supplémentaire: Scrabble
+Clonez cet exercie et suivez les instructions dans le readme.
 
-Scrabble Word Scorer
+[Scrabble Word Scorer](https://github.com/ga-wdi-exercises/scrabbler)
 
 ### Resources
 * Variables cheat sheet
@@ -651,7 +651,7 @@ Scrabble Word Scorer
   * Monkeys
   * Application Config
   * Superheroes
-* Screencasts
+* Publications sur internet
   * WDI8, Robin
     * Part 1
     * Part 2
