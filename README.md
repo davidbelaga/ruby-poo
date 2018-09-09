@@ -354,7 +354,7 @@ Maintenant nous pouvons directement accéder les propriétés de l'instance User
   </details>
   
 ### `attr_accessor` est en fait un raccourci qui combine deux autres raccourcis
-#### `attr_accessor` est `attr_reader` combiné avec attr_writer.
+#### `attr_accessor` est `attr_reader` combiné avec `attr_writer`.
 
 attr_reader rend un attribut lisible, attr_writer rend an attribut écrivable. attr_accessor rend un attribute à la fois lisible ET écrivable.
 
@@ -388,22 +388,26 @@ hermione.lastname = "Weasley"
 hermione.full_name
 # => "Hermione Weasley"
 ```
-/////////////////////////////////////
-attr_reader creates a getter method only. Trying to do hermione.firstname = "Ginny" will fail.
 
-attr_writer creates a setter method only. Trying to do puts hermione.lastname will fail.
+`attr_reader`créé seulement une méthode getter. Si l'on tente hermione.firstname = "Ginny", cela va échouer.
 
-attr_accessor creates getters and setters.
+`attr_writer`créé seulement une méthode setter. Si l'on tente puts hermione.lastname, cela va échouer.
 
-You will most commonly use attr_accessor
+`attr_accessor` créé des méthodes getters et setters.
 
-Break (10 minutes / 1:00)
-You Do: Monkies! (20 minutes / 1:20)
-For the next exercise, clone down the repo linked below: https://github.com/ga-wdi-exercises/oop_monkey
+> Vous allez utiliser essentiellement `attr_accessor`
 
-Class Attributes / Variables (5 minutes / 1:25)
-Let's come up with a way of keeping track of how many users have been created total...
+---
+### Pause :) (10 minutes / 1:00)
+---
+### A FAIRE: Monkies! (20 minutes / 1:20)
+Pour le prochain exercice, clonez la repo dans le lien suivant : https://github.com/ga-wdi-exercises/oop_monkey
+---
 
+Les Attributs/Variables de Classe (5 minutes / 1:25)
+Trouvons une façon de sauvegarder le nombre d'utilisateurs qui ont été créés dans leur totalité...
+
+```ruby
 class User
   attr_accessor :firstname, :lastname
   @@all = 0
@@ -422,6 +426,8 @@ class User
     return "#{@firstname.capitalize} #{@lastname.capitalize}"
   end
 end
+```
+```ruby
 harry = User.new("Harry", "Potter")
 harry.count
 # => 1
@@ -437,13 +443,15 @@ ron.count
 # => 3
 draco.count
 # => 3
-But there's something weird going on here: note that we aren't counting the number of Rons, Harrys or Dracos. Think about what .count might be returning. More on this in a moment!
+```
+Mais il y a quelque chose de bizarre qui se passe ici: remarquez qu'on n'est pas en train de compter le nombre de Ron, Harry ou Draco. Pensez à ce que .count pourrait retourner. Plus sur ce point prochainement...
 
-A variable name beginning with @@ is a class variable. Every instance of a class has the same value for this variable. It cannot be accessed with attr_accessor. You have to actually create a method to access it.
+Une variable commençant avec @@ est une variable de classe. Chaque instance de classe a la même valeur pour cette variable. Elle ne peut pas être récupérée avec `attr_accessor`. On doit créer une méthode pour y accéder.
 
-Class Attributes and Methods Together (10 minutes / 1:40)
-A method name beginning with the class name is a class method. It is attached to the class itself, rather than to instances. There are also methods you call on User itself. So far we've only seen .new.It would make more sense if, in order to retrieve the total number of users, we ran User.count instead of harry.count...
+### Les attributs et les méthodes de Classe (10 minutes / 1:40)
+Un nom de méthode commençant avec le nom de la classe est une méthode de classe. Elle est rattachée à la classe elle-même, plutôt qu'aux instances. Il y a aussi des méthodes qu'on appelle sur `User`. Pour l'instant nous avons vu seulement `.new`. Cela aurait plus de sens si nous faisions `User.count` au lieu de `harry.count` afin de récupérer le nombre total d'utilisateurs.
 
+```ruby
 class User
   attr_accessor :firstname, :lastname
   @@all = 0
@@ -464,16 +472,21 @@ class User
   end
 
 end
+```
+```ruby
 ginny = User.new("Ginny", "Weasley")
 ginny.count
 # => Error!
 User.count
 # => 1
-Self (5 minutes / 1:45)
-self is a special variable that contains the current instance of an object (like this in Javascript). It's how the object refers to itself.
+```
+### Self (5 minutes / 1:45)
 
-self has another context as well: def self.all Here, self refers to class User. What does this mean? It means that the method .all is called on the class User, much like .new, and is therefore a class method.
+`self` est une variable spéciale qui contient l'instance en cours d'un objet (comme `this` en Javascript). C'est ainsi que l'objet fait référence à lui-même.
 
+`self`a aussi un autre contexte : `def self.all`. Ici `self`fait référence à la classe `User`. Qu'est-ce que cela signifie? Cela veut dire que la méthode `.all`est appelée sur la classe `User`, comme `.new` et qu'elle est par conséquent une méthode de classe.
+
+```ruby
 class User
   attr_accessor :firstname, :lastname
   @@all = []
@@ -497,6 +510,8 @@ class User
   end
 
 end
+```
+```ruby
 draco = User.new("Draco", "Malfoy")
 # "Creating Draco"
 luna = User.new("Luna", "Lovegood")
@@ -505,48 +520,55 @@ bellatrix = User.new("Bellatrix", "LeStrange")
 # "Creating Bellatrix"
 User.all
 # => [#<User @firstname="Draco">, #<User @firstname="Luna">, #<User @firstname="Bellatrix">]
-Break (10 minutes / 1:55)
-You Do: Orange Tree (25 minutes / 2:20)
-From Chris Pine's "Learn to Program - Second Edition": p 112, section 13.6
+```
 
-Make an OrangeTree class that has...
+### Pause (10 minutes / 1:55)
+### A FAIRE: Un oranger (25 minutes / 2:20)
+> Pris dans "Learn to Program - Second Edition" de Chris Pine : p 112, section 13.6
 
-a height method that returns its height in feet
-it's initial value should be determined by some input
-hint: you don't necessarily have to define the method
-a one_year_passes method that, when called, ages the tree one year. Start the age at 0.
-Test your code.
+Faites une classe d'oranger qui a...
 
-Each year the tree grows taller by one foot
-After 50 years the tree should "die" (its height goes to 0)
-Test your code.
+* une méthode haughteur qui retourne sa hauteur en pieds.
+  * Sa valeur initiale devrait être déterminée par une donnée.
+  * indice: vous ne devez pas nécessairement définir la méthode.
+* une méthode une_annee_passe, qui, lorsqu'elle est appelée, vieillit l'arbre d'un an. Commencez l'âge à 0.
+> Tesez votre code.
 
-After the first 5 years, the tree bears 20 oranges
-You should be able to count_the_oranges, which returns the number of oranges on the tree
-Test your code.
+* Chaque année, l'arbre grandit d'un pied
+* Au bout de 50 ans l'arbre meurt (sa taille repart à zéro)
+> Testez votre code
 
-You should be able to pick_an_orange, which reduces the number of oranges by 1
-Ensure that your tree cannot have negative oranges
-Ensure that after each year your tree has 20 total oranges again
-Test your code.
+* Au bout des 5 premières années, l'arbre donne fruit à 20 oranges
+* Vous devriez être capables de `compter_oranges`,ce qui retourne le nombre d'oranges sur un arbre
+> Testez votre code
 
-The number of oranges the tree bears each year is equal to 20 plus the age of the tree
-Bonus
-Create an OrangeTreeOrchard class that manages multiple OrangeTrees. It can...
+* Vous devriez être capables de `cueillir_oranges`, ce qui réduit le nombre d'oranges par 1
+* Faites en sorte que votre oranger n'ait pas un nombre négatif d'oranges
+* Faites en sorte que votre oranger ait 20 oranges au total après chaque nouvelle année
+> Testez votre code
 
-Age all the trees by one year
-Pick and count all the fruit
-Calculate average height and fruit of all orange trees
-Closing / Questions (10 minutes / 2:30)
-Sample Questions
-Create a Ruby class for a student, initialized with a name and an age.
-Write a getter for name and age, and a setter for name only
-Create a new student and demonstrate using all the methods
-Explain the difference between local and instance variables
-Glossary
-Class: a blueprint for objects
-Instance: an object that is created using a class
-Instance Variable: a property that is particular to an instance
+* Le nombre d'oranges produit par l'arbre chaque année est égal à 20 plus l'âge de l'arbre
+
+#### Bonus
+
+Créez une classe VergerOrangers qui gère plusieurs orangers. Elle peut...
+
+* Vieillir tous les arbres d'un an
+* Cueillir et compter tous les fruits
+* Calculer la moyenne et le produit de tous les orangers
+
+### FIN / Exercices (10 minutes / 2:30)
+
+### Exercices supplémentaires
+* Créez une classe Ruby pour un élève, initializez le avec un nom et un âge
+  * Ecrivez un getter pour le nom et l'âge, un setter pour seulement le nom
+  * Créez un nouvel élève et faites la démonstration en utilisatnt toutes les méthodes
+* Expliquez la différence entre les variables locales et les variables d'instances
+
+### Glossaire
+*Class*: a blueprint for objects
+*Instance*: an object that is created using a class
+*Variable d'instance*: a property that is particular to an instance
 Class Variable: a property that is accessible by all instances of a class
 Instance Method: a method that can be called by an instance of a class (e.g., sample_user.reset_password)
 Class Method: a method that can be called by a class (e.g., User.list_user)
