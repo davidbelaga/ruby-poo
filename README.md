@@ -192,7 +192,7 @@ puts madhatter
 ```
 <details><summary>
 Quelles conclusions pouvons-nous tirer de la relation entre `def initialize` et `.new`? (Indice: elle sert le même but que la fonction constructor de Javascript's constructor)</summary>
- >> initialize est une méthode spéciale qui est en lien avec .new, mais à part ça elle a le même comportement que n'importe quelle autre méthode. Cela signifie qu'on peut lui passer des arguments (à nouveau, tout comme le constructor de Javascript's )...
+ >> La méthode `initialize` est lancée à chaque fois `.new`est appelé. - Utilisez `.new` pour créer un nouvel objet. - `initialize` est appelé automatiquement si c'est défini dans une classe.  - `.new` est une méthode de la classe. - `initialize` est une méthode de l'instance. - Il faut appeler `new` en premier; avant d'avoir appelé `new` il n' y a aucune instance sur laquelle on peut appeler `initialize`.
   </details>
   
 <details><summary>How is this different from other User instance methods we've seen?</summary>
@@ -200,15 +200,16 @@ Quelles conclusions pouvons-nous tirer de la relation entre `def initialize` et 
   </details>
 
 
-You Can Pass Arguments to initialize
+### You Can Pass Arguments to initialize
+initialize est une méthode spéciale qui est en lien avec `.new`, mais à part ça elle a le même comportement que n'importe quelle autre méthode. Cela signifie qu'on peut lui passer des arguments (à nouveau, tout comme le constructor de Javascript's )...
 
-
+```ruby
 require "pry"
 
 class User
 
   def initialize(firstname, lastname)
-    puts "I'm a new User named #{firstname} #{lastname}"
+    puts "Je suis un nouveau User et je m'appelle #{firstname} #{lastname}"
   end
 
 end
@@ -216,15 +217,19 @@ end
 binding.pry
 
 puts "end of file"
+```
+```ruby
 # pry
 harry = User.new("Harry", "Potter")
-# I'm a new User named Harry Potter
+# Je suis un nouveau User et je m'appelle Harry Potter
 # => #<User:0x007f96f312b240>
-Instance Variables (10 minutes / 0:40)
-Let's create a method that prints the full name of the user.
+```
+### Variables  d'instance(10 minutes / 0:40)
+Créons une méthode qui imprime le nom complet du User.
 
-In Ruby, normal variables are available only inside the method in which they were created.
+Dans Ruby, les variables normales sont accessibles seulement à l'intérieur de la méthode où elles ont été créées.
 
+Si vous mettez un @ avant le nom de la variable////////
 If you put an @ before the variable's name, it becomes an instance variable and therefore available inside the entire instance in which it was created.
 
 class User
