@@ -104,31 +104,41 @@ madhatter.greet
 #### Quelques questions
 Le `User` est-il une...
 
-*classe?
-*instance?
+* classe?
+* instance?
 `alice` est-elle une...
 
-*classe?
-*instance?
+* classe?
+* instance?
 `User.greet` retourne une erreur. `alice.greet` marche correctement. Donc nous pouvons déduire que la méthode `greet` ne peut être appelée que sur...
 
-*des instances de la classe User?
-*la classe User elle-même?
+* des instances de la classe User?
+* la classe User elle-même?
 Ainsi, est-ce que ça aurait un sens de nommer `greet` une..
 
-*"une méthode d'instance"?
-*"une méthode de classe"?
+* "une méthode d'instance"?
+* "une méthode de classe"?
 `User.new` marche bien. `alice.new` renvoit une erreur. Donc nous pouvons déduire que la nouvelle méthode ne peut qu'être appelée sur...
 
-*des instances de la classe User?
-*la classe User elle-même?
+* des instances de la classe User?
+* la classe User elle-même?
 Ainsi, est-ce que ça aurait un sens de nommer `new` une..
 
-*"une méthode d'instance"?
-*"une méthode de classe"?
- `class User` fonctionne. `class user` renvoit une erreur. Quelle est la règle que nous pouvons déduire sur les classes?
- `class UserName` fonctionne. `class User Name` renvoit une erreur. Quelle est la règle que nous pouvons déduire sur les classes?
- 
+* "une méthode d'instance"?
+* "une méthode de classe"?
+  
+<details>
+  <summary>
+`class User` fonctionne. `class user` renvoit une erreur. Quelle est la règle que nous pouvons déduire sur les classes?</summary>
+ > Les noms de classe commencent obligatoirement avec une majuscule.
+</details>
+
+<details>
+  <summary>
+ `class UserName` fonctionne. `class User Name` renvoit une erreur. Quelle est la règle que nous pouvons déduire sur les classes?</summary>
+ > Les noms de classe n'ont pas d'espaces.
+</details>
+
 ### Initialiser Users (10 minutes / 0:30)
 What was the purpose of a constructor function in Javascript classes?
 Ruby classes have an equivalent to Javascript constructors: the initialize method!
