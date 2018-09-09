@@ -566,23 +566,24 @@ Créez une classe VergerOrangers qui gère plusieurs orangers. Elle peut...
 * Expliquez la différence entre les variables locales et les variables d'instances
 
 ### Glossaire
-*Class*: a blueprint for objects
-*Instance*: an object that is created using a class
-*Variable d'instance*: a property that is particular to an instance
-Class Variable: a property that is accessible by all instances of a class
-Instance Method: a method that can be called by an instance of a class (e.g., sample_user.reset_password)
-Class Method: a method that can be called by a class (e.g., User.list_user)
-initialize: a class method that, when triggered, creates an instance and assigns initial properties
-.new: a class method that, when called, triggers its initialize method
-attr_accessor: a setting that allows you to directly "get" or "set" an instance variable
-Bonus: Public and Private (5 minutes / 1:50)
-You Do
+* *Class*: a blueprint for objects
+* *Instance*: an object that is created using a class
+* *Variable d'instance*: a property that is particular to an instance
+* *Variable de classe*: a property that is accessible by all instances of a class
+* *Méthode d'instance*: a method that can be called by an instance of a class (e.g., sample_user.reset_password)
+* *Méthode de classe*: a method that can be called by a class (e.g., User.list_user)
+* `initialize`: a class method that, when triggered, creates an instance and assigns initial properties
+* `.new`: a class method that, when called, triggers its initialize method
+* `attr_accessor`: a setting that allows you to directly "get" or "set" an instance variable
+
+### Bonus: Public and Private (5 minutes / 1:50)
+### A FAIRE
 Draw a picture of a machine, real or imaginary, that has inputs (buttons, switches, keypads...) and displays (dials, lights, screens...). Label what they do.
 Most machines have internal gauges or memories that help it make decisions: temperature monitors, voltage monitors, hard disks, and so on. These are visible only inside the machine: whoever's using the machine can't see them. Draw two of these on your machine and label them.
 By default all instance and class methods are public, except for def initialize which is private. This means they're visible to other objects. An analogy: they're functions that have their own buttons on the outside of the machine, like a car's turn signal.
 
 There may be methods that all other objects don't need to know about.
-
+```ruby
 class User
   attr_accessor :firstname, :lastname
   @@all = []
@@ -608,45 +609,49 @@ class User
   end
 
 end
+```
+```ruby
 harry = User.new("Harry", "Potter", "Expecto Patronum")
 # #<User @firstname="Harry" @password="munortaP otcepxE">
 harry.encrypt("Expecto Patronum")
 # Error! Private method `encrypt`
+```
+
 Putting private in front of methods means they can be used inside the object, but are not available outside it. An analogy: they're functions that do not have their own buttons on the outside of the machine, like a car's air filter.
 
 private is useful mostly for keeping things organized. Consider jQuery: It's already cluttered enough, with all these methods like .fadeOut and .css. It has lots of other methods hidden inside it that we don't really need to know about.
 
-Review: Why OOP?
-Easy to Understand
+### Review: Why OOP?
+#### Easy to Understand
 Objects help us build programs that model how we tend to think about the world. Instead of a bunch of variables and functions (procedural style), we can group relevant data and functions into objects, and think about them as individual, self-contained units. This grouping of properties (data) and methods is called encapsulation.
 
-Managing Complexity
+#### Managing Complexity
 This is especially important as our programs get more and more complex. We can't keep all the code (and what it does) in our head at once. Instead, we often want to think just a portion of the code.
 
 Objects help us organize and think about our programs. If I'm looking at code for a Squad object, and I see it has associated people, and those people can dance when the squad dances, I don't need to think about or see all the code related to a person dancing. I can just think at a high level "ok, when a squad dances, all it's associated people dance". This is a form of abstraction... I don't need to think about the details, just what's happening at a high-level.
 
-Ensuring Consistency
+#### Ensuring Consistency
 One side effect of encapsulation (grouping data and methods into objects) is that these objects can be in control of their data. This usually means ensuring consistency of their data.
 
 Consider the bank account example... I might define a bank account object such that you can't directly change it's balance. Instead, you have to use the withdrawl and deposit methods. Those methods are the interface to the account, and they can enforce rules for consistency, such as "balance can't be less than zero".
 
-Modularity
+#### Modularity
 If our objects are well-designed, then they interact with each other in well-defined ways. This allows us to refactor (rewrite) any object, and it should not impact (cause bugs) in other areas of our programs.
 
-Extra Practice: Scrabble
+### Extra Practice: Scrabble
 Clone this exercise and follow the instructions in the readme.
 
 Scrabble Word Scorer
 
-Resources
-Variables cheat sheet
-Other exercises
-Monkeys
-Application Config
-Superheroes
-Screencasts
-WDI8, Robin
-Part 1
-Part 2
-Part 3
-Part 4
+### Resources
+* Variables cheat sheet
+* Other exercises
+  * Monkeys
+  * Application Config
+  * Superheroes
+* Screencasts
+  * WDI8, Robin
+    * Part 1
+    * Part 2
+    * Part 3
+    * Part 4
