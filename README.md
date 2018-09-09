@@ -566,23 +566,25 @@ Créez une classe VergerOrangers qui gère plusieurs orangers. Elle peut...
 * Expliquez la différence entre les variables locales et les variables d'instances
 
 ### Glossaire
-* *Class*: a blueprint for objects
-* *Instance*: an object that is created using a class
-* *Variable d'instance*: a property that is particular to an instance
-* *Variable de classe*: a property that is accessible by all instances of a class
-* *Méthode d'instance*: a method that can be called by an instance of a class (e.g., sample_user.reset_password)
-* *Méthode de classe*: a method that can be called by a class (e.g., User.list_user)
-* `initialize`: a class method that, when triggered, creates an instance and assigns initial properties
-* `.new`: a class method that, when called, triggers its initialize method
-* `attr_accessor`: a setting that allows you to directly "get" or "set" an instance variable
+* **Class**: un plan des objets
+* **Instance**: un objet créé avec une classe
+* **Variable d'instance**: une propriété exclusive d'un objet
+* **Variable de classe**: une propriété accessible par toutes les instances d'une classe
+* **Méthode d'instance**: une méthode qui peut être appelée par une instance de classe (e.g., sample_user.reset_password)
+* **Méthode de classe**: une méthode qui peut être appelée par une classe (e.g., User.list_user)
+* `initialize`: une méthode de classe qui, lorsqu'elle est enclenchée, créé une instance et assigne les propriétes initiales
+* `.new`: une méthode de classe qui, lorsqu'elle est enclenchée, lance sa méthode d'initialisation
+* `attr_accessor`: un réglage qui permet to directement "get" ou "set" une variable d'instance
 
-### Bonus: Public and Private (5 minutes / 1:50)
+### Bonus: Public et privé (5 minutes / 1:50)
 ### A FAIRE
-Draw a picture of a machine, real or imaginary, that has inputs (buttons, switches, keypads...) and displays (dials, lights, screens...). Label what they do.
-Most machines have internal gauges or memories that help it make decisions: temperature monitors, voltage monitors, hard disks, and so on. These are visible only inside the machine: whoever's using the machine can't see them. Draw two of these on your machine and label them.
-By default all instance and class methods are public, except for def initialize which is private. This means they're visible to other objects. An analogy: they're functions that have their own buttons on the outside of the machine, like a car's turn signal.
+Dessinez une machine, réelle ou imaginaire qui des entrées (boutons, interupteurs, claviers...) et des éléments d'affichage (cadrans, lumières, écrans...).
+Déterminez ce que chaque élément accomplit.
+La plupart des machines ont des jauges internes ou mémoire qui les aident à prendre des décisions: des contrôleurs de température, de voltage, des discs durs etc.
+Ces derniers ne sont visible qu'à l'intérieur de la machine: quiconque utilise la machine ne peut pas les voir. Dessinez deux d'entre eux placez les sur votre machine. Par défault toutes les instances et méthodes de classe sont publics, à l'exception de `def initialize`qui est privé. Ceci signifie qu'ils sont visibles pour d'autre objets. Une analogie: ce sont des fonctions qui ont leur propres boutons à l'extérieur de la machine, comme les clignotants d'une voiture.
 
-There may be methods that all other objects don't need to know about.
+Il peut y avoir des méthodes qui ne doivent pas être nécessairement connus des autres objets.
+
 ```ruby
 class User
   attr_accessor :firstname, :lastname
