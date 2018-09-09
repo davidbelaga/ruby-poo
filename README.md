@@ -81,16 +81,14 @@ puts "fin du fichier"
 ```
 
 <details>
-  <summary>**Qu'en est-il de cette classe Ruby qui ressemble à une classe Javascript.**
+  <summary>Qu'en est-il de cette classe Ruby qui ressemble à une classe Javascript.
   </summary>
-Le mot clef 
-  `classe`
-  . La classe contient des méthodes.
+Le mot clef `classe`. La classe contient des méthodes.
 </details>
 
 
 Maintenant, générons des instances de cette classe...
-
+```ruby
 alice = User.new
 alice.set_name_to("alice")
 puts alice.get_name
@@ -101,35 +99,37 @@ puts madhatter.get_name
 
 alice.greet
 madhatter.greet
-Quelques questions
-Le User est-il une...
+```
 
-classe?
-instance?
-alice est-elle une...
+#### Quelques questions
+Le `User` est-il une...
 
-classe?
-instance?
-User.greet retourne une erreur. alice.greet marche correctement. Donc nous pouvons déduire que la méthode greet ne peut être appelée que sur...
+*classe?
+*instance?
+`alice` est-elle une...
 
-des instances de la classe User?
-la classe User elle-même?
-Ainsi, est-ce que ça aurait un sens de nommer greet une..
+*classe?
+*instance?
+`User.greet` retourne une erreur. `alice.greet` marche correctement. Donc nous pouvons déduire que la méthode `greet` ne peut être appelée que sur...
 
-"une méthode d'instance"?
-"une méthode de classe"?
-User.new marche bien. alice.new renvoit une erreur. Donc nous pouvons déduire que la nouvelle méthode ne peut qu'être appelée sur...
+*des instances de la classe User?
+*la classe User elle-même?
+Ainsi, est-ce que ça aurait un sens de nommer `greet` une..
 
-des instances de la classe User?
-la classe User elle-même?
-Ainsi, est-ce que ça aurait un sens de nommer new une..
+*"une méthode d'instance"?
+*"une méthode de classe"?
+`User.new` marche bien. `alice.new` renvoit une erreur. Donc nous pouvons déduire que la nouvelle méthode ne peut qu'être appelée sur...
 
-"une méthode d'instance"?
-"une méthode de classe"?
+*des instances de la classe User?
+*la classe User elle-même?
+Ainsi, est-ce que ça aurait un sens de nommer `new` une..
+
+*"une méthode d'instance"?
+*"une méthode de classe"?
  `class User` fonctionne. `class user` renvoit une erreur. Quelle est la règle que nous pouvons déduire sur les classes?
  `class UserName` fonctionne. `class User Name` renvoit une erreur. Quelle est la règle que nous pouvons déduire sur les classes?
  
-Initializing Users (10 minutes / 0:30)
+### Initialiser Users (10 minutes / 0:30)
 What was the purpose of a constructor function in Javascript classes?
 Ruby classes have an equivalent to Javascript constructors: the initialize method!
 
