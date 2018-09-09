@@ -45,23 +45,24 @@ Prends 10 minutes avec un partenaire pour trouver au moins trois types d'objets 
 > Une approche utile serait de prendre les "noms" dans la description de l'application et de dire qu'ils sont des noms.
 
 ## Our First Object (10 minutes / 0:20)
-Say that we have a car. Each of us has a mental model of what a car is: it has four wheels, runs on gas, has a steering wheel that allows us to drive it, etc. This blueprint is like a class. Now, when we see a car in front of us, this is like an instance, it's an actual object in front of us. Each object has its blueprint, and is an instance of that blueprint or class.
+Prenons une voiture? On a tous un modèle mental d'une voiture: elle a quatre roues, de l'essence, un guidon... Le plan de la voiture est comme une classe. Lorsque nous voyons une voiture, c'est comme une instance de classe, un véritable objet devant nous. Chaque objet a son propre plan, et est une instance de ce plan ou classe.
 
-A class is a blueprint from which objects are made. In Javascript we used classes, which operate very similarly to classes in Ruby. Each object made from a class is an instance of that class. Each instance of a class is an object.
+Une classe est un plan à partir duquel les objets sont fabriqués. En Javascript nous avons utilisé des classes qui fonctionnent de façon très similaire que dans Ruby. Chaque objet fait à partir d'une classe est une instance de cette classe. Chaque instance de classe est un objet.
 
-Let's define a User class. We'll be using binding.pry to test our code.
+Définissons une classe Utilisateur. Nous allons utiliser binding.pry pour tester notre code.
 
-> Aside: pry is a ruby gem that allows us to work with ruby code in an IRB (interactive ruby shell). It's similar to working in our developer console in a web browser with javascript.
+> Remarque: pry est une gem ruby qui nous permet de travailler avec ruby dans un IRB (interactive ruby shell). C'est comme travailler dans notre console de développeur dans le navigateur.
+
 ```
 $ touch app.rb
-$ gem install pry # run this if you haven't installed pry yet
+$ gem install pry # faites ceci si vous n'avez pas encore installé pry
 require "pry"
 ```
 ```
 class User
 
   def set_name_to(some_string)
-    @name = some_string
+    @name = un_string
   end
 
   def get_name
@@ -69,17 +70,18 @@ class User
   end
 
   def greet
-    puts "Hi! My name is #{@name}!"
+    puts "Salut! Je m'appelle #{@name}!"
   end
 
 end
 
 binding.pry
 
-puts "end of file"
+puts "fin du fichier"
 ```
-What about this Ruby class looks similar to a Javascript class?
-Now let's generate some instances of this class...
+Qu'en est-il de cette classe Ruby qui ressemble à une classe Javascript.
+Maintenant, générons des instances de cette classe...
+
 
 alice = User.new
 alice.set_name_to("alice")
@@ -91,33 +93,34 @@ puts madhatter.get_name
 
 alice.greet
 madhatter.greet
-Some Questions
-Is User a(n)...
+Quelques questions
+Le User est-il une...
 
-class?
+classe?
 instance?
-Is alice a(n)...
+alice est-elle une...
 
-class?
+classe?
 instance?
-User.greet throws an error. alice.greet works fine. So we can deduce that the greet method can only be called on...
+User.greet retourne une erreur. alice.greet marche correctement. Donc nous pouvons déduire que la méthode greet ne peut être appelée que sur...
 
-instances of the User class?
-the User class itself?
-Thus, would it make sense to call greet a(n)...
+des instances de la classe User?
+la classe User elle-même?
+Ainsi, est-ce que ça aurait un sens de nommer greet une..
 
-"instance method"?
-"class method"?
-User.new works fine. alice.new throws an error. So we can deduce that the new method can only be called on...
+"une méthode d'instance"?
+"une méthode de classe"?
+User.new marche bien. alice.new renvoit une erreur. Donc nous pouvons déduire que la nouvelle méthode ne peut qu'être appelée sur...
 
-instances of the User class?
-the User class itself?
-Thus, it would be make sense to call new a(n)...
+des instances de la classe User?
+la classe User elle-même?
+Ainsi, est-ce que ça aurait un sens de nommer new une..
 
-"instance method"?
-"class method"?
- `class User` works fine. `class user` throws an error. What's a rule we can deduce about classes from this?
- `class UserName` works fine. `class User Name` throws an error. What's a rule we can deduce about classes from this?
+"une méthode d'instance"?
+"une méthode de classe"?
+ `class User` fonctionne. `class user` renvoit une erreur. Quelle est la règle que nous pouvons déduire sur les classes?
+ `class UserName` fonctionne. `class User Name` renvoit une erreur. Quelle est la règle que nous pouvons déduire sur les classes?
+ 
 Initializing Users (10 minutes / 0:30)
 What was the purpose of a constructor function in Javascript classes?
 Ruby classes have an equivalent to Javascript constructors: the initialize method!
