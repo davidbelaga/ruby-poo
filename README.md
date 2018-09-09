@@ -79,9 +79,9 @@ binding.pry
 
 puts "fin du fichier"
 ```
-#### 
+
 <details>
-  <summary>Qu'en est-il de cette classe Ruby qui ressemble à une classe Javascript.
+  <summary>*Qu'en est-il de cette classe Ruby qui ressemble à une classe Javascript.*
   </summary>
 Le mot clef `classe`. La classe contient des méthodes.
 </details>
