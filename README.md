@@ -58,7 +58,7 @@ $ touch app.rb
 $ gem install pry # faites ceci si vous n'avez pas encore installé pry
 require "pry"
 ```
-```
+```ruby
 class User
 
   def set_name_to(some_string)
@@ -81,9 +81,11 @@ puts "fin du fichier"
 ```
 
 <details>
-  <summary>*Qu'en est-il de cette classe Ruby qui ressemble à une classe Javascript.*
+  <summary>**Qu'en est-il de cette classe Ruby qui ressemble à une classe Javascript.**
   </summary>
-Le mot clef `classe`. La classe contient des méthodes.
+Le mot clef 
+  `classe`
+  . La classe contient des méthodes.
 </details>
 
 
