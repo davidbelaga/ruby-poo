@@ -625,9 +625,9 @@ Si l'on met `private`devant des méthodes signifie qu'ils peuvent être utilisé
 
 ### Résumé: Pourquoi la POO?
 #### C'est facile à comprendre
-Objects help us build programs that model how we tend to think about the world. Instead of a bunch of variables and functions (procedural style), we can group relevant data and functions into objects, and think about them as individual, self-contained units. This grouping of properties (data) and methods is called encapsulation.
+Les objets nous aident à construire des programmes qui reflètent la façon dont on pense à la réalité. Au lieu d'un tas de variables et de fonctions (programmation procédurale), nous pouvons regrouper les données et fonctions pertinentes dans des objets, et les considérer comme des unités individuelles et autonomes. Ce regroupement de propriétés (données) et méthodes est appelé encapsulation.
 
-#### Managing Complexity
+#### Gérer la complexité
 Ceci est d'autant plus important que nos programmes deviennent de plus en plus complexes. On en peut retenir l'intégralite du code (et de ce qu'il fait) simultanémant dans notre tête. Nous préférons nous concentrer sur des portions du code.
 
 Les objets nous aident à organiser et penser nos programmes. Si je regarde le code pour un objet équipe, et si je vois que cet objet a des personnes qui y sont associées, et que ces personnes peuvent danser lorsque l'équipe danse, je ne dois pas penser ou voir le code associé à toutes ces personnes qui dansent. Je peux me contenter de placer à un niveau au-dessus : lorsque l'équipe danse, les personnes associées dansent. C'est une forme d'abstraction qui me permet de ne pas me concentrer sur les détails.
