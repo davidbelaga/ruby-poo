@@ -5,22 +5,22 @@
 * Savoir si une donnée serait mieux stockée dans une variable locale, d'instance ou de classe
 * Expliquer si l'accessibilité de cette donnée est définie au mieux par `attr_accessor`, `attr_reader`, `attr_writer` ou aucune de ces expressions
 * Définir précisément les variables d'instance et de classe
-* Proposer deux manière de définir des méthodes de classe
+* Proposer deux manières de définir des méthodes de classe
 
 ## Les bases: Qu'est-ce que la POO?
 Ruby est un langage orienté objet. Cela veut dire que cela a été conçu sur l'idée que le développeur construira son application en passant essentiellement par des objets.
 
-De la même manière que vous l'avez appris avec le JSOO (Javascript orienté objet), un objet est une collection d'attributs reliés (propriétés) et de méthodes (comportements). Imaginez un objet comme une petite machine avec des écrans affichant un texte et des boutons à pousser.
+De la même manière que vous l'avez appris avec le JSOO (JavaScript orienté objet), un objet est une collection d'attributs reliés (propriétés) et de méthodes (comportements). Imaginez un objet comme une petite machine avec des écrans affichant un texte et des boutons à pousser.
 
 Lorsqu'on écrit une application orientée objet, on écrit les plans de ces machines, et ensuite on écrit une suite d'événements, qui sera lancée par les utilisateurs, et qui permettra aux machines d'interagir les unes avec les autres.
 
-Une grande partie du code que vous allez voir aujourd'hui est très similaire à ce que vous avez vu la dans le cours de JSOO la semaine dernière. Le concept de classe existe depuis quelques années déjà, mais n'a été introduit dans Javascript que très récemment (ECMAScript 2016/ES6). Utilisez ces connaissances pour avancer dans le cours d'aujourd'hui!
+Une grande partie du code que vous allez voir aujourd'hui est très similaire à ce que vous avez vu la dans le cours de JSOO la semaine dernière. Le concept de classe existe depuis quelques années déjà, mais n'a été introduit dans JavaScript que très récemment (ECMAScript 2016/ES6). Utilisez ces connaissances pour avancer dans le cours d'aujourd'hui!
 
 ## A FAIRE: Le Processus POO (10 minutes / 0:10)
-Nous avons expliqué sommairement en quoi la poo est un paradigme, mais nous n'avons pas expliqué comment réduire un problème en un ensemble d'objets.
+Nous avons expliqué sommairement en quoi la POO est un paradigme, mais nous n'avons pas expliqué comment réduire un problème en un ensemble d'objets.
 
 ### Exemple: Le Monopoly
-> "Le Monopoly est un jeu où les joueurs de faire fortune à travers le biens immobiliers et l'argent.
+> "Le Monopoly est un jeu où les joueurs cherchent à faire fortune à travers les biens immobiliers et l'argent.
 * plateau
 * joueurs
 * jetons
@@ -47,11 +47,11 @@ Prends 10 minutes avec un partenaire pour trouver au moins trois types d'objets 
 ## Notre premier Object (10 minutes / 0:20)
 Prenons une voiture? On a tous un modèle mental d'une voiture: elle a quatre roues, de l'essence, un guidon... Le plan de la voiture est comme une classe. Lorsque nous voyons une voiture, c'est comme une instance de classe, un véritable objet devant nous. Chaque objet a son propre plan, et est une instance de ce plan ou classe.
 
-Une classe est un plan à partir duquel les objets sont fabriqués. En Javascript nous avons utilisé des classes qui fonctionnent de façon très similaire que dans Ruby. Chaque objet fait à partir d'une classe est une instance de cette classe. Chaque instance de classe est un objet.
+Une classe est un plan à partir duquel les objets sont fabriqués. En JavaScript nous avons utilisé des classes qui fonctionnent de façon très similaire que dans Ruby. Chaque objet fait à partir d'une classe est une instance de cette classe. Chaque instance de classe est un objet.
 
 Définissons une classe Utilisateur. Nous allons utiliser binding.pry pour tester notre code.
 
-> Remarque: pry est une gem ruby qui nous permet de travailler avec ruby dans un IRB (interactive ruby shell). C'est comme travailler dans notre console de développeur dans le navigateur.
+> Remarque: pry est une gem Ruby qui nous permet de travailler avec Ruby dans un IRB (Interactive Ruby Shell). C'est comme travailler dans notre console de développeur dans le navigateur.
 
 ```
 $ touch app.rb
@@ -81,7 +81,7 @@ puts "fin du fichier"
 ```
 
 <details>
-  <summary><strong>Qu'en est-il de cette classe Ruby qui ressemble à une classe Javascript.</strong>
+  <summary><strong>Qu'en est-il de cette classe Ruby qui ressemble à une classe JavaScript.</strong>
   </summary>
 Le mot clef `classe`. La classe contient des méthodes.
 </details>
@@ -122,7 +122,7 @@ Ainsi, est-ce que ça aurait un sens de nommer `greet` une..
 * "une méthode d'instance"?
 * "une méthode de classe"?
 
-`User.new` marche bien. `alice.new` renvoit une erreur. Donc nous pouvons déduire que la nouvelle méthode ne peut qu'être appelée sur...
+`User.new` marche bien. `alice.new` renvoie une erreur. Donc nous pouvons déduire que la nouvelle méthode ne peut qu'être appelée sur...
 
 * des instances de la classe User?
 * la classe User elle-même?
@@ -134,23 +134,23 @@ Ainsi, est-ce que ça aurait un sens de nommer `new` une..
   
 <details>
   <summary>
-`class User` fonctionne. `class user` renvoit une erreur. Quelle est la règle que nous pouvons déduire sur les classes?</summary>
+`class User` fonctionne. `class user` renvoie une erreur. Quelle est la règle que nous pouvons déduire sur les classes?</summary>
  > Les noms de classe commencent obligatoirement avec une majuscule.
 </details>
 
 <details>
   <summary>
- `class UserName` fonctionne. `class User Name` renvoit une erreur. Quelle est la règle que nous pouvons déduire sur les classes?</summary>
+ `class UserName` fonctionne. `class User Name` renvoie une erreur. Quelle est la règle que nous pouvons déduire sur les classes?</summary>
  > Les noms de classe n'ont pas d'espaces.
 </details>
 
 ### Initialiser Users (10 minutes / 0:30)
 <details>
-  <summary><strong>Quel est le but d'un constructeur de fonctions dans les classes Javascript?</strong></summary>
+  <summary><strong>Quel est le but d'un constructeur de fonctions dans les classes JavaScript?</strong></summary>
   > Initialiser n'importe quelle propriété que nous souhaitons donner à une instance de classe lorsqu'elle est créée.
 </details>
 
-Les classes Ruby ont un équivalent aux constructeurs Javascript: la méthode initialize!
+Les classes Ruby ont un équivalent aux constructeurs JavaScript: la méthode initialize!
 
 ```ruby
 require 'pry'
@@ -191,7 +191,7 @@ puts alice
 puts madhatter
 ```
 <details><summary>
-Quelles conclusions pouvons-nous tirer de la relation entre `def initialize` et `.new`? (Indice: elle sert le même but que la fonction constructor de Javascript's constructor)</summary>
+Quelles conclusions pouvons-nous tirer de la relation entre `def initialize` et `.new`? (Indice: elle sert le même but que la fonction constructor de JavaScript)</summary>
  >> La méthode `initialize` est lancée à chaque fois `.new`est appelé. - Utilisez `.new` pour créer un nouvel objet. - `initialize` est appelé automatiquement si c'est défini dans une classe.  - `.new` est une méthode de la classe. - `initialize` est une méthode de l'instance. - Il faut appeler `new` en premier; avant d'avoir appelé `new` il n' y a aucune instance sur laquelle on peut appeler `initialize`.
   </details>
   
@@ -201,7 +201,7 @@ Quelles conclusions pouvons-nous tirer de la relation entre `def initialize` et 
 
 
 ### You Can Pass Arguments to initialize
-initialize est une méthode spéciale qui est en lien avec `.new`, mais à part ça elle a le même comportement que n'importe quelle autre méthode. Cela signifie qu'on peut lui passer des arguments (à nouveau, tout comme le constructor de Javascript's )...
+initialize est une méthode spéciale qui est en lien avec `.new`, mais à part ça elle a le même comportement que n'importe quelle autre méthode. Cela signifie qu'on peut lui passer des arguments (à nouveau, tout comme le constructor de JavaScript)...
 
 ```ruby
 require "pry"
@@ -224,7 +224,7 @@ harry = User.new("Harry", "Potter")
 # Je suis un nouveau User et je m'appelle Harry Potter
 # => #<User:0x007f96f312b240>
 ```
-### Variables  d'instance(10 minutes / 0:40)
+### Variables  d'instance (10 minutes / 0:40)
 Créons une méthode qui imprime le nom complet du User.
 
 Dans Ruby, les variables normales sont accessibles seulement à l'intérieur de la méthode où elles ont été créées.
@@ -293,7 +293,7 @@ puts harry.get_firstname
 # "Ginny"
 ```
 ### attr_accessor
-Souvenez-vous comment on ne pouvait pas simplement tapper Harry.firstname = "un autre prénom" dans l'exemple précédent.
+Souvenez-vous comment on ne pouvait pas simplement taper Harry.firstname = "un autre prénom" dans l'exemple précédent.
 
 ```ruby
 class User
@@ -320,7 +320,7 @@ end
 ```ruby
 harry = User.new("Harry", "Potter")
 harry.firstname = "Ginny"
-# This throws an error
+# Ceci envoie une erreur
 harry.set_firstname("Ginny")
 puts harry.get_firstname
 # =>
@@ -349,7 +349,7 @@ nayana.firstname = "Nayana"
 puts nayana.firstname
 ```
 <details><summary>
-Maintenant nous pouvons directement accéder les propriétés de l'instance User, donc nous pouvons déduire que `attr_accessor` est un raccourci qui fait quoi?</summary>
+Maintenant nous pouvons directement accéder les propriétés de l'instance User, donc nous pouvons déduire que `attr_accessor` est un raccourci qui fait quoi ?</summary>
   >> Cela créé des méthodes getter et setter pour la variable d'instance firstname.
   </details>
   
@@ -389,9 +389,9 @@ hermione.full_name
 # => "Hermione Weasley"
 ```
 
-`attr_reader`créé seulement une méthode getter. Si l'on tente hermione.firstname = "Ginny", cela va échouer.
+`attr_reader`crée seulement une méthode getter. Si l'on tente hermione.firstname = "Ginny", cela va échouer.
 
-`attr_writer`créé seulement une méthode setter. Si l'on tente puts hermione.lastname, cela va échouer.
+`attr_writer`crée seulement une méthode setter. Si l'on tente puts hermione.lastname, cela va échouer.
 
 `attr_accessor` créé des méthodes getters et setters.
 
@@ -401,7 +401,7 @@ hermione.full_name
 ### Pause :) (10 minutes / 1:00)
 ---
 ### A FAIRE: Monkies! (20 minutes / 1:20)
-Pour le prochain exercice, clonez la repo dans le lien suivant : https://github.com/ga-wdi-exercises/oop_monkey
+Pour le prochain exercice, clonez le repo dans le lien suivant : https://github.com/ga-wdi-exercises/oop_monkey
 ---
 
 Les Attributs/Variables de Classe (5 minutes / 1:25)
@@ -482,7 +482,7 @@ User.count
 ```
 ### Self (5 minutes / 1:45)
 
-`self` est une variable spéciale qui contient l'instance en cours d'un objet (comme `this` en Javascript). C'est ainsi que l'objet fait référence à lui-même.
+`self` est une variable spéciale qui contient l'instance en cours d'un objet (comme `this` en JavaScript). C'est ainsi que l'objet fait référence à lui-même.
 
 `self`a aussi un autre contexte : `def self.all`. Ici `self`fait référence à la classe `User`. Qu'est-ce que cela signifie? Cela veut dire que la méthode `.all`est appelée sur la classe `User`, comme `.new` et qu'elle est par conséquent une méthode de classe.
 
@@ -494,7 +494,7 @@ class User
   def initialize(firstname, lastname)
     @firstname = firstname
     @lastname = lastname
-    # here, `self` refers to the current instance
+    # ici, `self` fait référence à l'instance actuelle
     puts "Creating #{self.firstname}"
     @@all.push(self)
   end
@@ -528,18 +528,18 @@ User.all
 
 Faites une classe d'oranger qui a...
 
-* une méthode haughteur qui retourne sa hauteur en pieds.
+* une méthode hauteur qui retourne sa hauteur en pieds.
   * Sa valeur initiale devrait être déterminée par une donnée.
   * indice: vous ne devez pas nécessairement définir la méthode.
 * une méthode une_annee_passe, qui, lorsqu'elle est appelée, vieillit l'arbre d'un an. Commencez l'âge à 0.
-> Tesez votre code.
+> Testez votre code.
 
 * Chaque année, l'arbre grandit d'un pied
 * Au bout de 50 ans l'arbre meurt (sa taille repart à zéro)
 > Testez votre code
 
 * Au bout des 5 premières années, l'arbre donne fruit à 20 oranges
-* Vous devriez être capables de `compter_oranges`,ce qui retourne le nombre d'oranges sur un arbre
+* Vous devriez être capables de `compter_oranges`, ce qui retourne le nombre d'oranges sur un arbre
 > Testez votre code
 
 * Vous devriez être capables de `cueillir_oranges`, ce qui réduit le nombre d'oranges par 1
@@ -560,9 +560,9 @@ Créez une classe VergerOrangers qui gère plusieurs orangers. Elle peut...
 ### FIN / Exercices (10 minutes / 2:30)
 
 ### Exercices supplémentaires
-* Créez une classe Ruby pour un élève, initializez le avec un nom et un âge
+* Créez une classe Ruby pour un élève, initialisez le avec un nom et un âge
   * Ecrivez un getter pour le nom et l'âge, un setter pour seulement le nom
-  * Créez un nouvel élève et faites la démonstration en utilisatnt toutes les méthodes
+  * Créez un nouvel élève et faites la démonstration en utilisant toutes les méthodes
 * Expliquez la différence entre les variables locales et les variables d'instances
 
 ### Glossaire
@@ -572,16 +572,16 @@ Créez une classe VergerOrangers qui gère plusieurs orangers. Elle peut...
 * **Variable de classe**: une propriété accessible par toutes les instances d'une classe
 * **Méthode d'instance**: une méthode qui peut être appelée par une instance de classe (e.g., sample_user.reset_password)
 * **Méthode de classe**: une méthode qui peut être appelée par une classe (e.g., User.list_user)
-* `initialize`: une méthode de classe qui, lorsqu'elle est enclenchée, créé une instance et assigne les propriétes initiales
+* `initialize`: une méthode de classe qui, lorsqu'elle est enclenchée, créé une instance et assigne les propriétés initiales
 * `.new`: une méthode de classe qui, lorsqu'elle est enclenchée, lance sa méthode d'initialisation
 * `attr_accessor`: un réglage qui permet to directement "get" ou "set" une variable d'instance
 
 ### Bonus: Public et privé (5 minutes / 1:50)
 ### A FAIRE
-Dessinez une machine, réelle ou imaginaire qui des entrées (boutons, interupteurs, claviers...) et des éléments d'affichage (cadrans, lumières, écrans...).
+Dessinez une machine, réelle ou imaginaire qui des entrées (boutons, interrupteurs, claviers...) et des éléments d'affichage (cadrans, lumières, écrans...).
 Déterminez ce que chaque élément accomplit.
 La plupart des machines ont des jauges internes ou mémoire qui les aident à prendre des décisions: des contrôleurs de température, de voltage, des discs durs etc.
-Ces derniers ne sont visible qu'à l'intérieur de la machine: quiconque utilise la machine ne peut pas les voir. Dessinez deux d'entre eux placez les sur votre machine. Par défault toutes les instances et méthodes de classe sont publics, à l'exception de `def initialize`qui est privé. Ceci signifie qu'ils sont visibles pour d'autre objets. Une analogie: ce sont des fonctions qui ont leur propres boutons à l'extérieur de la machine, comme les clignotants d'une voiture.
+Ces derniers ne sont visibles qu'à l'intérieur de la machine: quiconque utilise la machine ne peut pas les voir. Dessinez deux d'entre eux placez-les sur votre machine. Par défaut toutes les instances et méthodes de classe sont publics, à l'exception de `def initialize`qui est privé. Ceci signifie qu'ils sont visibles pour d'autres objets. Une analogie: ce sont des fonctions qui ont leurs propres boutons à l'extérieur de la machine, comme les clignotants d'une voiture.
 
 Il peut y avoir des méthodes qui ne doivent pas être nécessairement connus des autres objets.
 
@@ -619,7 +619,7 @@ harry.encrypt("Expecto Patronum")
 # Error! Private method `encrypt`
 ```
 
-Si l'on met `private`devant des méthodes signifie qu'ils peuvent être utilisés à l'intérieur de l'objet, mais qu'ils sont inaccessibles depuis l'extérieur. Une analogie: ce sont des fonctions qui n'ont pas leur boutons à l'extérieur de la machine, comme le filtre à air de la voiture.
+Si l'on met `private` devant des méthodes signifie qu'ils peuvent être utilisés à l'intérieur de l'objet, mais qu'ils sont inaccessibles depuis l'extérieur. Une analogie: ce sont des fonctions qui n'ont pas leurs boutons à l'extérieur de la machine, comme le filtre à air de la voiture.
 
 `private`est utile surtout pour garder les choses bien organisées. Prenons jQuery: ce langage est déjà bien assez compliqué avec des méthodes comme `.fadeOut`et `.css`. Il y a plein d'autres méthodes cachées à l'intérieur qu'on n'est pas obligé de connaître.
 
@@ -628,26 +628,26 @@ Si l'on met `private`devant des méthodes signifie qu'ils peuvent être utilisé
 Les objets nous aident à construire des programmes qui reflètent la façon dont on pense à la réalité. Au lieu d'un tas de variables et de fonctions (programmation procédurale), nous pouvons regrouper les données et fonctions pertinentes dans des objets, et les considérer comme des unités individuelles et autonomes. Ce regroupement de propriétés (données) et méthodes est appelé encapsulation.
 
 #### Gérer la complexité
-Ceci est d'autant plus important que nos programmes deviennent de plus en plus complexes. On en peut retenir l'intégralite du code (et de ce qu'il fait) simultanémant dans notre tête. Nous préférons nous concentrer sur des portions du code.
+Ceci est d'autant plus important que nos programmes deviennent de plus en plus complexes. On en peut retenir l'intégralité du code (et de ce qu'il fait) simultanément dans notre tête. Nous préférons nous concentrer sur des portions du code.
 
 Les objets nous aident à organiser et penser nos programmes. Si je regarde le code pour un objet équipe, et si je vois que cet objet a des personnes qui y sont associées, et que ces personnes peuvent danser lorsque l'équipe danse, je ne dois pas penser ou voir le code associé à toutes ces personnes qui dansent. Je peux me contenter de placer à un niveau au-dessus : lorsque l'équipe danse, les personnes associées dansent. C'est une forme d'abstraction qui me permet de ne pas me concentrer sur les détails.
 
 #### Garantir une cohérence
 Un des effets de l'encapsulation (regrouper les données et méthodes dans des objets) est que ces objets peuvent être en contrôle de leurs données. Ceci signifie une cohérence dans les données.
 
-Prenons l'exemple d'un compte bancaire... Je pourrais définir un compte bancaire afin qu'on ne puiss pas directement modifier le solde. Au lieu, il faut utiliser les méthodes retrait ou dépot. Ces méthodes sont les interfaces du compte, et ils peuvent renforcer les règles de cohérence, telles que "le solde ne peut être inférieur à zéro."
+Prenons l'exemple d'un compte bancaire... Je pourrais définir un compte bancaire afin qu'on ne puisse pas directement modifier le solde. Au lieu, il faut utiliser les méthodes retrait ou dépôt. Ces méthodes sont les interfaces du compte, et ils peuvent renforcer les règles de cohérence, telles que "le solde ne peut être inférieur à zéro."
 
 #### Modularité
 Si nos objets sont bien définis, alors ils interagissent de façon bien définie. Ceci nous permet de refactorer (réécrire) n'importe quel objet sans impacter d'autres endroits de notre code.
 
 ### Entrainement supplémentaire: Scrabble
-Clonez cet exercice et suivez les instructions dans le readme.
+Clonez cet exercice et suivez les instructions dans le Readme.
 
 [Scrabble Word Scorer](https://github.com/ga-wdi-exercises/scrabbler)
 
-### Resources
+### Ressources
 * [Fiche variables](https://github.com/ga-wdi-lessons/ruby-oop/blob/master/variables.md)
-* Other exercises
+* Autres exercices
   * [Monkeys](https://github.com/ga-wdi-exercises/oop_monkey)
   * [Application Config](https://github.com/ga-wdi-exercises/ruby_application_configuration)
   * [Superheroes](https://github.com/ga-wdi-exercises/superheros)
